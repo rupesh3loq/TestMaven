@@ -9,6 +9,8 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -s settings.xml
+      run: |
+        mvn release:update-versions
+        mvn deploy -s settings.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
