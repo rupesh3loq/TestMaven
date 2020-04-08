@@ -2,11 +2,18 @@ name: Publish Maven Package
 
 on: push
 
+env:
+  MAIN_VER: 1
+
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
+    - name: Set package update-version
+      shell: pwsh
+      run: echo "::set-env name=PACKAGE_VERSION::${{ env.MAIN_VER }}.${{ github.run_number }}.$(Get-Date -Format "yyMMdd")"
 
     - name: Publish to GitHub Packages Apache Maven
       run: |
