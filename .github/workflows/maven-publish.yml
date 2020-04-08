@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set package update-version
+    - name: Set package version
       shell: pwsh
       run: echo "::set-env name=PACKAGE_VERSION::${{ env.MAIN_VER }}.${Rev:rr}.${{ github.run_number }}.$(Get-Date -Format "yyMMdd")"
 
@@ -24,6 +24,7 @@ jobs:
 
     - name: Publish to GitHub Packages Apache Maven
       run: |
+        echo $PACKAGE_VERSION
         mvn deploy -s settings.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
