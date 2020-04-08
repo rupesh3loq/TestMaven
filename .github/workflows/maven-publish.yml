@@ -13,7 +13,7 @@ jobs:
 
     - name: Set package update-version
       shell: pwsh
-      run: echo "::set-env name=PACKAGE_VERSION::${{ env.MAIN_VER }}.${{ github.run_number }}.$(Get-Date -Format "yyMMdd")"
+      run: echo "::set-env name=PACKAGE_VERSION::${{ env.MAIN_VER }}.$(Rev:rr).${{ github.run_number }}.$(Get-Date -Format "yyMMdd")"
 
 #    - name: Publish to GitHub Packages Apache Maven
 #      run: |
