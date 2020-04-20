@@ -27,4 +27,4 @@ jobs:
         echo $PACKAGE_VERSION
         mvn deploy -s settings.xml
       env:
-        github-token: ${{ github.token }}
+        github_token: ${{ github.token }}
