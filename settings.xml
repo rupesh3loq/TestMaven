@@ -30,7 +30,7 @@
     <server>
       <id>github</id>
       <username>Bright Ran</username>
-      <password>${env.github-token}</password>
+      <password>${env.github_token}</password>
     </server>
   </servers>
 </settings>
