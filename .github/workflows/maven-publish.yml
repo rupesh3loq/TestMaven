@@ -12,8 +12,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Set package version
-      shell: pwsh
-      run: echo "::set-env name=PACKAGE_VERSION::${{ env.MAIN_VER }}.${{ github.run_number }}.$(Get-Date -Format "yyMMdd")"
+      run: echo "::set-env name=PACKAGE_VERSION::${{ env.MAIN_VER }}.${{ github.run_number }}.$(date +"%y%m%d")"
 
 #    - name: Publish to GitHub Packages Apache Maven
 #      run: |
