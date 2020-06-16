@@ -6,7 +6,7 @@
 
   <groupId>MavenPackages</groupId>
   <artifactId>TestMaven</artifactId>
-  <version>${env.PACKAGE_VERSION}</version>
+  <version>${PACKAGE_VERSION}</version>
 
   <name>Test Maven</name>
   <!-- FIXME change it to the project's website -->
