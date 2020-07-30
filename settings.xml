@@ -19,8 +19,8 @@
         </repository>
         <repository>
           <id>github</id>
-          <name>GitHub TestGitHubPackagesRML Apache Maven Packages</name>
-          <url>https://maven.pkg.github.com/TestGitHubPackagesRML/TestMaven</url>
+          <name>GitHub PackagesRML Apache Maven Packages</name>
+          <url>https://maven.pkg.github.com/PackagesRML/TestMaven</url>
         </repository>
       </repositories>
     </profile>
