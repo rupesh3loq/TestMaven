@@ -32,7 +32,7 @@ jobs:
       run: ls -R $HOME
 
     - name: set the master password
-      run: mvn --encrypt-master-password
+      run: mvn --encrypt-master-password 'test@pwd'
 
     - name: check settings-security.xml - 02
       run: ls -R $HOME
