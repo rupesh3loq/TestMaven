@@ -21,6 +21,13 @@ jobs:
 #      env:
 #        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: Setup Java JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: '9.0.4'
+        java-package: jdk
+        architecture: x64
+
     - name: Publish to GitHub Packages
       run: |
         sed -i 's/PACKAGE_VERSION/${{ env.PACKAGE_VERSION }}/g' pom.xml
