@@ -34,17 +34,3 @@ jobs:
         mvn deploy -s settings.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: check settings-security.xml - 01
-      run: ls -R $HOME
-
-    - name: set the master password
-      run: |
-        master_password=$(mvn --encrypt-master-password 'test@pwd')
-        mkdir ~/.m2
-        echo "<settingsSecurity>" > ~/.m2/settings-security.xml
-        echo "  <master>${master_password}</master>" >> ~/.m2/settings-security.xml
-        echo "</settingsSecurity>" >> ~/.m2/settings-security.xml
-
-    - name: check settings-security.xml - 02
-      run: ls -R $HOME
