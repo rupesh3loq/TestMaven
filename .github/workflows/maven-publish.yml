@@ -27,3 +27,6 @@ jobs:
         mvn deploy -s settings.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: check settings-security.xml
+      run: ls -R $HOME
